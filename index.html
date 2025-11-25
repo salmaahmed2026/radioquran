@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>إذاعة القرآن الكريم من القاهرة - بث مباشر | استماع اونلاين</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="استمع بث مباشر لإذاعة القرآن الكريم من القاهرة 24/7. تلاوات عطرة وبرامج دينية قيمة بجودة عالية MP3 بدون تقطيع. Holy Quran Radio from Cairo, live stream.">
+  <link rel="canonical" href="https://www.holyquranradio.com/">
+  <link rel="icon" type="image/x-icon" href="https://www.holyquranradio.com/favicon.ico">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.holyquranradio.com/">
+  <meta property="og:title" content="إذاعة القرآن الكريم من القاهرة - بث مباشر | استماع اونلاين">
+  <meta property="og:description" content="استمع بث مباشر لإذاعة القرآن الكريم من القاهرة 24/7. تلاوات عطرة وبرامج دينية قيمة بجودة عالية MP3 بدون تقطيع.">
+  <meta property="og:image" content="https://i.imgur.com/L4uA9qL.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.holyquranradio.com/">
+  <meta property="twitter:title" content="إذاعة القرآن الكريم من القاهرة - بث مباشر | استماع اونلاين">
+  <meta property="twitter:description" content="استمع بث مباشر لإذاعة القرآن الكريم من القاهرة 24/7. تلاوات عطرة وبرامج دينية قيمة بجودة عالية MP3 بدون تقطيع.">
+  <meta property="twitter:image" content="https://i.imgur.com/L4uA9qL.png">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#111827">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+    }
+    .visualizer-bar {
+      width: 6px;
+      border-radius: 9999px;
+      transition: height 0.15s ease-out;
+      box-shadow: 0 0 3px rgba(96, 165, 250, 0.7), 0 0 6px rgba(96, 165, 250, 0.5);
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <main class="relative min-h-screen w-full flex items-center justify-center bg-gray-900 text-white overflow-hidden p-4">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black opacity-90"></div>
+    <div class="absolute top-0 start-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] opacity-10"></div>
+    
+    <div class="relative z-10 w-full max-w-lg">
+      <div class="bg-gray-900/50 backdrop-blur-2xl rounded-2xl shadow-2xl p-6 sm:p-8 border border-blue-500/30 text-center">
+        
+        <audio id="audio-player" src="https://stream.radiojar.com/8s5u5tpdtwzuv" preload="auto" crossorigin="anonymous"></audio>
+      
+        <img src="https://i.imgur.com/L4uA9qL.png" alt="إذاعة القرآن الكريم" class="w-40 sm:w-48 mx-auto mb-4">
+      
+        <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-wide leading-tight">
+          بث مباشر إذاعة القرآن الكريم من القاهرة
+        </h1>
+        <p class="text-blue-200/80 mb-1 text-lg">
+          Radio Quran
+        </p>
+        <p class="text-blue-300 mb-6 text-md">
+          جودة عالية MP3 بدون تقطيع
+        </p>
+      
+        <div id="error-message" class="bg-red-500/20 border border-red-500 text-red-300 px-4 py-3 rounded-lg relative mb-4 hidden" role="alert">
+          <strong class="font-bold">خطأ في البث!</strong>
+          <span class="block sm:inline">تعذر تشغيل الراديو. يرجى المحاولة مرة أخرى لاحقاً.</span>
+        </div>
+      
+        <div id="visualizer-container" class="h-16 flex justify-center items-end my-4 space-x-1">
+          <!-- Visualizer bars will be dynamically generated or hardcoded here -->
+        </div>
+      
+        <div class="flex items-center justify-center space-x-6 mt-6">
+          <div class="flex items-center justify-start w-32">
+            <div class="group flex items-center">
+              <button id="mute-btn" class="text-gray-400 hover:text-blue-300 transition-colors duration-200 text-xl w-8 h-8 flex items-center justify-center">
+                <i id="volume-icon" class="fa-solid fa-volume-high"></i>
+              </button>
+              <div class="w-0 group-hover:w-[90px] overflow-hidden transition-all duration-300 ease-in-out">
+                  <input 
+                      id="volume-slider"
+                      type="range" 
+                      min="0" 
+                      max="1" 
+                      step="0.01" 
+                      value="0.75"
+                      class="w-[90px] h-1.5 ml-2 bg-gray-700 rounded-lg appearance-none cursor-pointer range-sm accent-blue-500">
+              </div>
+            </div>
+          </div>
+      
+          <button id="play-pause-btn" class="bg-blue-500 text-gray-900 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400/50 transform hover:scale-110">
+            <svg id="loading-spinner" class="animate-spin h-8 w-8 text-gray-900 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <i id="pause-icon" class="fa-solid fa-pause hidden"></i>
+            <i id="play-icon" class="fa-solid fa-play"></i>
+          </button>
+          
+          <div class="w-32">
+              <!-- Placeholder for symmetry -->
+          </div>
+        </div>
+      
+        <div class="mt-8 border-t border-blue-500/20 pt-6">
+          <p class="text-gray-300 text-sm text-center leading-relaxed mb-6">استمع إلى بث مباشر لإذاعة القرآن الكريم من القاهرة على مدار 24 ساعة. تلاوات خاشعة، برامج دينية، وتفسير للقرآن الكريم بجودة عالية وبدون انقطاع. انضم إلى ملايين المستمعين حول العالم في رحلة روحانية مع كلام الله.</p>
+          
+          <div class="text-center">
+            <p class="text-blue-200/90 mb-4 text-md font-medium">شارك الأجر</p>
+            <div class="flex items-center justify-center space-x-4">
+              <a id="facebook-share" href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" class="w-10 h-10 flex items-center justify-center bg-gray-700/50 hover:bg-blue-500 rounded-full text-lg text-gray-300 hover:text-white transition-all duration-200">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a id="twitter-share" href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on X" class="w-10 h-10 flex items-center justify-center bg-gray-700/50 hover:bg-blue-500 rounded-full text-lg text-gray-300 hover:text-white transition-all duration-200">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a id="whatsapp-share" href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" class="w-10 h-10 flex items-center justify-center bg-gray-700/50 hover:bg-blue-500 rounded-full text-lg text-gray-300 hover:text-white transition-all duration-200">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <button id="copy-link-btn" aria-label="Copy link" class="w-10 h-10 flex items-center justify-center bg-gray-700/50 hover:bg-blue-500 rounded-full text-lg text-gray-300 hover:text-white transition-all duration-200">
+                <i class="fa-solid fa-link"></i>
+              </button>
+            </div>
+            <div id="copy-confirmation-container" class="h-5 mt-3">
+              <p id="copy-confirmation" class="text-green-400 text-sm transition-opacity duration-300 opacity-0">تم نسخ الرابط بنجاح!</p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('audio-player');
+      
+      // Buttons and Icons
+      const playPauseBtn = document.getElementById('play-pause-btn');
+      const loadingSpinner = document.getElementById('loading-spinner');
+      const playIcon = document.getElementById('play-icon');
+      const pauseIcon = document.getElementById('pause-icon');
+      const muteBtn = document.getElementById('mute-btn');
+      const volumeIcon = document.getElementById('volume-icon');
+      const volumeSlider = document.getElementById('volume-slider');
+      
+      // Messages and feedback
+      const errorMessage = document.getElementById('error-message');
+      const copyLinkBtn = document.getElementById('copy-link-btn');
+      const copyConfirmation = document.getElementById('copy-confirmation');
+      
+      // Visualizer
+      const visualizerContainer = document.getElementById('visualizer-container');
+      const numBars = 30;
+      let visualizerBars = [];
+
+      // State
+      let isPlaying = false;
+      let isLoading = false;
+      let isMuted = false;
+      let volume = 0.75;
+      
+      // Web Audio API
+      let audioContext = null;
+      let analyser = null;
+      let source = null;
+      let dataArray = null;
+      let animationFrameId = null;
+      let isAudioContextInitialized = false;
+
+      // Social Sharing
+      const shareUrl = window.location.href;
+      const shareText = 'استمع إلى إذاعة القرآن الكريم من القاهرة بث مباشر';
+      document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+      document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+      document.getElementById('whatsapp-share').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+
+      // --- INITIALIZATION ---
+      
+      // Create visualizer bars
+      for (let i = 0; i < numBars; i++) {
+        const bar = document.createElement('div');
+        bar.className = 'bg-gradient-to-b from-blue-400 to-blue-600 visualizer-bar';
+        bar.style.height = '5%';
+        visualizerContainer.appendChild(bar);
+        visualizerBars.push(bar);
+      }
+
+      audio.volume = volume;
+      volumeSlider.value = volume;
+
+      // --- UI UPDATE FUNCTIONS ---
+
+      function updatePlayPauseUI() {
+        loadingSpinner.classList.toggle('hidden', !isLoading);
+        playIcon.classList.toggle('hidden', isPlaying || isLoading);
+        pauseIcon.classList.toggle('hidden', !isPlaying || isLoading);
+      }
+      
+      function updateVolumeUI() {
+          volumeSlider.disabled = isMuted;
+          if (isMuted || volume === 0) {
+              volumeIcon.className = 'fa-solid fa-volume-xmark';
+          } else if (volume < 0.5) {
+              volumeIcon.className = 'fa-solid fa-volume-low';
+          } else {
+              volumeIcon.className = 'fa-solid fa-volume-high';
+          }
+      }
+      
+      function showError(show) {
+          errorMessage.classList.toggle('hidden', !show);
+      }
+
+      // --- WEB AUDIO API & VISUALIZER ---
+
+      function setupAudioContext() {
+        if (isAudioContextInitialized) return;
+        try {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          analyser = audioContext.createAnalyser();
+          analyser.fftSize = 64;
+          source = audioContext.createMediaElementSource(audio);
+          
+          source.connect(analyser);
+          analyser.connect(audioContext.destination);
+          
+          const bufferLength = analyser.frequencyBinCount;
+          dataArray = new Uint8Array(bufferLength);
+          isAudioContextInitialized = true;
+        } catch (e) {
+          console.error("Web Audio API not supported or failed to initialize:", e);
+        }
+      }
+      
+      function startVisualizer() {
+        if (!isAudioContextInitialized || !analyser || !dataArray || animationFrameId) return;
+        
+        const renderFrame = () => {
+          analyser.getByteFrequencyData(dataArray);
+          
+          for (let i = 0; i < numBars; i++) {
+            const value = dataArray[i] || 0;
+            const height = Math.max(5, (value / 255) * 100);
+            if (visualizerBars[i]) {
+                visualizerBars[i].style.height = `${height}%`;
+            }
+          }
+          animationFrameId = requestAnimationFrame(renderFrame);
+        };
+        renderFrame();
+      }
+
+      function stopVisualizer() {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        visualizerBars.forEach(bar => bar.style.height = '5%');
+      }
+
+      // --- EVENT HANDLERS ---
+      
+      playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            isLoading = true;
+            updatePlayPauseUI();
+            setupAudioContext();
+            if (audioContext && audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            audio.play().catch(e => {
+                console.error("Playback failed:", e);
+                showError(true);
+                isLoading = false;
+                updatePlayPauseUI();
+            });
+        } else {
+            audio.pause();
+        }
+      });
+      
+      muteBtn.addEventListener('click', () => {
+        isMuted = !isMuted;
+        audio.muted = isMuted;
+        updateVolumeUI();
+      });
+
+      volumeSlider.addEventListener('input', (event) => {
+        volume = parseFloat(event.target.value);
+        audio.volume = volume;
+        if (volume > 0 && isMuted) {
+            isMuted = false;
+            audio.muted = false;
+        }
+        updateVolumeUI();
+      });
+      
+      copyLinkBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            copyConfirmation.classList.remove('opacity-0');
+            copyConfirmation.classList.add('opacity-100');
+            setTimeout(() => {
+                copyConfirmation.classList.remove('opacity-100');
+                copyConfirmation.classList.add('opacity-0');
+            }, 2000);
+        }).catch(err => console.error('Failed to copy: ', err));
+      });
+
+      // --- AUDIO ELEMENT EVENTS ---
+      
+      const handleError = () => {
+        showError(true);
+        isPlaying = false;
+        isLoading = false;
+        updatePlayPauseUI();
+        stopVisualizer();
+      };
+      
+      audio.addEventListener('error', handleError);
+      audio.addEventListener('stalled', handleError);
+
+      audio.addEventListener('playing', () => {
+        isPlaying = true;
+        isLoading = false;
+        showError(false);
+        updatePlayPauseUI();
+        startVisualizer();
+      });
+
+      audio.addEventListener('pause', () => {
+        isPlaying = false;
+        isLoading = false;
+        updatePlayPauseUI();
+        stopVisualizer();
+      });
+      
+      audio.addEventListener('waiting', () => {
+        isLoading = true;
+        isPlaying = false;
+        updatePlayPauseUI();
+      });
+
+    });
+  </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
